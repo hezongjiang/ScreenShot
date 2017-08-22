@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XHR-ug-X2B">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--请截屏-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="请截屏" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="ScreenshotDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyI-A9-Zru">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YyI-A9-Zru" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ezc-fp-ep7"/>
+                            <constraint firstAttribute="trailing" secondItem="YyI-A9-Zru" secondAttribute="trailing" id="I81-Ny-djY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YyI-A9-Zru" secondAttribute="bottom" id="dSO-Fb-YQf"/>
+                            <constraint firstItem="YyI-A9-Zru" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xIy-E1-vQm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="请截图" id="PMZ-8f-csv"/>
+                    <connections>
+                        <outlet property="webView" destination="YyI-A9-Zru" id="5b2-3l-N5l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="36.431784107946029"/>
+        </scene>
+        <!--这是截图-->
+        <scene sceneID="LdJ-jn-yjK">
+            <objects>
+                <viewController storyboardIdentifier="picture" title="这是截图" automaticallyAdjustsScrollViewInsets="NO" id="jir-6h-Emu" customClass="ImageViewController" customModule="ScreenshotDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gjh-xh-C3h"/>
+                        <viewControllerLayoutGuide type="bottom" id="LJp-tp-LCZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xHp-So-mPd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJd-JP-tfo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jir-6h-Emu" id="VRP-7y-1nf"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pJd-JP-tfo" firstAttribute="top" secondItem="gjh-xh-C3h" secondAttribute="bottom" id="Lri-LS-HZu"/>
+                            <constraint firstAttribute="trailing" secondItem="pJd-JP-tfo" secondAttribute="trailing" id="duv-ae-OcN"/>
+                            <constraint firstItem="LJp-tp-LCZ" firstAttribute="top" secondItem="pJd-JP-tfo" secondAttribute="bottom" id="icQ-44-ToG"/>
+                            <constraint firstItem="pJd-JP-tfo" firstAttribute="leading" secondItem="xHp-So-mPd" secondAttribute="leading" id="jp8-TY-Mtr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="pJd-JP-tfo" id="Z23-Md-JIg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4r9-Zw-eUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jG3-Pi-LDt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XHR-ug-X2B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S05-df-4uO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ovD-NU-JMn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mI4-lx-h5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="36"/>
+        </scene>
+    </scenes>
+</document>
